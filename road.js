@@ -10,6 +10,15 @@ class Road {
     const infinity = 1000000;
     this.top = -infinity;
     this.boottom = infinity;
+
+    const bottomLeft = { x: this.left, y: this.boottom };
+    const bottomRight = { x: this.right, y: this.boottom };
+    const topLeft = { x: this.left, y: this.top };
+    const topRight = { x: this.right, y: this.top };
+    this.borders = [
+      [topLeft, bottomLeft],
+      [topRight, bottomRight],
+    ];
   }
 
   getLaneCenter(laneIndex) {
